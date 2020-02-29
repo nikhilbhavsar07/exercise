@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Exercise the API app with user sign up/login/view& edit
 
-Things you may want to cover:
+1) POST /signup
+Host: localhost:3000
+Content-Type: application/json
+Cache-Control: no-cache
 
-* Ruby version
+{"user":{"name": "NIK", "email":"NIkhilbhavsar123@gmail.com", "password":"nikhil123", "password_confirmation":"nikhil", "city": "Pune" }}
 
-* System dependencies
+2) Login
+POST /login
+Host: localhost:3000
+Content-Type: application/json
+Cache-Control: no-cache
+data: {"email":"nikhilbhavsar07@gmail.com","password":"abcdefgh"}
 
-* Configuration
+response: 
+headers: 'token':"random token from server" 
+body:{
+    "message": "Successfully logged in",
+    "data": {
+        "id": 2,
+        "name": "Nikhil",
+        "email": "nikhilbhavsar07@gmail.com",
+         ...}
+}
 
-* Database creation
+3) Update User details:
+PUT /users/update
+Host: localhost:3000
+Content-Type: application/json
+token: "....token...."
+email: nikhilbhavsar07@gmail.com
+{"user":{"name": "NiK", "email": "nikhilbhavsar123@gmail.com", "city": "Mumbai", "password": "nikhil123" }}
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
