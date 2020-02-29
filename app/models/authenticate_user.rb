@@ -9,7 +9,7 @@ class AuthenticateUser < ApplicationRecord
       new_hash = OpenSSL::HMAC.hexdigest("SHA256", Rails.application.secrets.secret_key_base, password)
       token == new_hash
     end
-
+  end
 
   # private
   
